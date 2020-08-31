@@ -109,13 +109,13 @@ public class Automovil {
     }
 
     public String detalle(){
-        return "auto.Id          = " + this.id +
+        return "auto.Id          = "    + this.id +
                 "\nauto.fabricante  = " + this.fabricante  +
                 "\nauto.modelo      = " + this.modelo   +
-                "\nauto.tipo = " + this.getTipo().getDescripcion() +
+                "\nauto.tipo        = " + this.getTipo().getNombre() +
                 "\nauto.color       = " + this.color    +
                 "\nauto.cilindrada  = " + this.cilindrada +
-                "\nauto.colorPatente = " + Automovil.colorPatente;
+                "\nauto.colorPatente = " + colorPatente;
     }
     public String acelerar(int rpm){
         return "El auto " + this.fabricante + " acelerando a " + rpm + " rpm.";

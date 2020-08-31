@@ -37,9 +37,13 @@ public class EjemploAutomovilStatic {
         System.out.println("Velocidad maxima carretera = " + Automovil.VELOCIDAD_MAX_CARRETERA);
         System.out.println("Velocidad maxima ciudad    = " + Automovil.VELOCIDAD_MAX_EN_CIUDAD);
 
+
+        System.out.println("=======================================");
         TipoAutomovil tipoSubaru = subaru.getTipo();
+        System.out.println(tipoSubaru);
         System.out.println("Numero de puertas " + tipoSubaru.getNumeroPuertas());
         System.out.println("Descripcion " + tipoSubaru.getDescripcion());
+        System.out.println("=======================================");
 
 
 

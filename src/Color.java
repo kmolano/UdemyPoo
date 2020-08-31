@@ -2,21 +2,22 @@ public enum Color {
     ROJO("Rojo"),
     AMARILLO("Amarillo"),
     AZUL("Azul"),
-    BLANCO("Blando"),
+    BLANCO("Blanco"),
     GRIS("Gris oscuro"),
     NARANJO("Naranjo");
-    private final String Color;
 
-    Color(String color) {
-        this.Color = color;
+    private final String nombreColor;
+
+    Color(String coloor) {
+        this.nombreColor = coloor;
     }
 
     public String getColor() {
-        return Color;
+        return nombreColor;
     }
 
     @Override
     public String toString() {
-        return Color;
+        return this.nombreColor;
     }
 }
