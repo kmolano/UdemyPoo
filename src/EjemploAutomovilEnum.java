@@ -44,6 +44,16 @@ public class EjemploAutomovilEnum {
                 System.out.println("Es un automovil mas grande, con la maleta grande");
                 break;
         }
+        System.out.println("============");
+
+        TipoAutomovil[] tipos = TipoAutomovil.values();
+        for(TipoAutomovil ta:tipos){
+            System.out.println(ta + "=> " + ta.name() + ", " +
+                    ta.getNombre() + ", " +
+                    ta.getDescripcion() + ", " +
+                    ta.getNumeroPuertas());
+        }
+
 
 
 

@@ -1,11 +1,11 @@
 public enum TipoAutomovil {
     SEDAN("Sedan", 4, "Auto normal"),
-    STATION_WAGON("Station wagon", 4, "Auto grande"),
-    HATCHABACK("Hatchaback", 4 , "Auto compacto"),
+    STATION_WAGON("Station wagon", 5, "Auto grande"),
+    HATCHABACK("Hatchaback", 5 , "Auto compacto"),
     PICKUP("Pickup", 4, "Camioneta"),
-    COUPE("Coupe", 4, "Auto pequeño"),
+    COUPE("Coupe", 2, "Auto pequeño"),
     CONVERTIBLE("Convertible", 2, "Auto deportivo"),
-    FURGON("Furgon", 4, "Auto utilitario");
+    FURGON("Furgon", 3, "Auto utilitario");
 
     private final String nombre;
     private final int numeroPuertas;
