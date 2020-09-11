@@ -8,8 +8,8 @@ public enum Color {
 
     private final String nombreColor;
 
-    Color(String coloor) {
-        this.nombreColor = coloor;
+    Color(String coolor) {
+        this.nombreColor = coolor;
     }
 
     public String getColor() {

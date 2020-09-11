@@ -7,7 +7,7 @@ public class Automovil {
     private double cilindrada;
     private int capacidadEsTanque = 40;
 
-    private TipoAutomovil tipo;
+    private TipoAutomovil tipo ;
 
     private static Color colorPatente = Color.NARANJO;
     private static int capacidadEsTanqueStatico = 30;
