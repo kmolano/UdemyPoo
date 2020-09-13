@@ -1,8 +1,9 @@
+import java.util.Arrays;
 
 public class EjemploAutomovilArreglo {
     public static void main(String[] args) {
 
-        Rueda[] ruedasSub = new Rueda[10];
+
         Persona conductorSubaru = new Persona("Lucia", "Martinez");
         Automovil subaru  = new Automovil("Subaru","Impreza");
         subaru.setMotor(new Motor(2.0, TipoMotor.BENCINA));
@@ -11,23 +12,13 @@ public class EjemploAutomovilArreglo {
         subaru.setTipo(TipoAutomovil.HATCHABACK);
         subaru.setTipo(TipoAutomovil.PICKUP);
         subaru.setConductor(conductorSubaru);
-        //subaru.setRuedas(ruedasSub);
-        for(int i = 0; i < ruedasSub.length; i++){
-            subaru.addRueda(new Rueda("Yokohama", 16, 7.5));
-        }
 
 
-        Rueda[] ruedaMaz = new Rueda[5];
         Persona pato = new Persona("Pato", "Rodriguez");
         Automovil mazda  = new Automovil("Mazda","BT-50",Color.ROJO,new Motor(3.0, TipoMotor.DIESEL));
         mazda.setTipo(TipoAutomovil.PICKUP);
         mazda.setEstanque(new Estanque());
         mazda.setConductor(pato);
-        //mazda.setRuedas(ruedaMaz);
-        for(int i = 0; i < ruedaMaz.length; i++){
-            mazda.addRueda(new Rueda("Michelin", 18, 10.5));
-        }
-
 
 
         Persona bea = new Persona("Bea", "Gonzales");
@@ -36,44 +27,32 @@ public class EjemploAutomovilArreglo {
         nissan.setConductor(bea);
         nissan.setTipo(TipoAutomovil.PICKUP);
 
-        nissan.addRueda(new Rueda("Pirelli", 20, 11))
-                .addRueda(new Rueda("Pirelli", 20, 11))
-                .addRueda(new Rueda("Pirelli", 20, 11))
-                .addRueda(new Rueda("Pirelli", 20, 11))
-                .addRueda(new Rueda("Pirelli", 20, 11));
 
-
-        Rueda[] ruedasNissan2 = {new Rueda("Pirelli", 20, 11),
-                new Rueda("Pirelli", 20, 11),
-                new Rueda("Pirelli", 20, 11),
-                new Rueda("Pirelli", 20, 11),
-                new Rueda("Pirelli", 20, 11),};
         Persona lalo = new Persona("lalo", "Mena");
-        Automovil nissan2 = new Automovil("Nissan2", "Navara",Color.GRIS,
-                new Motor(3.5, TipoMotor.BENCINA),new Estanque(50), lalo, ruedasNissan2);
-        nissan2.setTipo(TipoAutomovil.PICKUP);
+        Automovil suzuki = new Automovil("Suzuki", "Vitara",Color.GRIS,
+                new Motor(1.6, TipoMotor.BENCINA),new Estanque(50));
+        suzuki.setConductor(lalo);
+        suzuki.setTipo(TipoAutomovil.SUV);
 
-        nissan2.setColor(Color.AMARILLO);
+        suzuki.setColor(Color.AMARILLO);
         Automovil.setColorPatente(Color.AZUL);
 
+        Automovil audi = new Automovil("Audi", "A3");
+        audi.setConductor(new Persona("Jano", "Perez"));
 
-        System.out.println(subaru.detalle());
-        System.out.println("=======================================");
-        System.out.println(mazda.detalle());
-        System.out.println("=======================================");
-        System.out.println(nissan.detalle());
-        System.out.println("=======================================");
-        System.out.println(nissan2.detalle());
-        System.out.println("=======================================");
+        Automovil[] autos = new Automovil[5];
+        autos[0] = subaru;
+        autos[1] = mazda;
+        autos[2] = nissan;
+        autos[3] = suzuki;
+        autos[4] = audi;
 
-        /*System.out.println("Conductor subaru " + subaru.getConductor());
-        System.out.println("Ruedas subaru");
-        for(Rueda r: subaru.getRuedas()){
-            System.out.println(r.getFabricante() + ", " +
-                    r.getAro() + ", " + r.getAncho());
+        Arrays.sort(autos);
+
+
+        for (Automovil auto : autos) {
+            System.out.println(auto);
         }
-        System.out.println("=======================================");*/
-
 
 
 

@@ -1,4 +1,4 @@
-public class Automovil {
+public class Automovil implements Comparable <Automovil>{
 
     private int id;
     private String fabricante;
@@ -143,28 +143,26 @@ public class Automovil {
     }
 
     public String detalle(){
-        String detalle = "auto.Id          = "    + this.id +
-                "\nauto.fabricante  = " + this.fabricante  +
-                "\nauto.modelo      = " + this.modelo;
+        StringBuilder detalle = new StringBuilder("auto.Id          = " + this.id +
+                "\nauto.fabricante  = " + this.fabricante +
+                "\nauto.modelo      = " + this.modelo);
         if(this.getTipo() != null){
-                detalle += "\nauto.tipo        = " + this.getTipo().getNombre();
+                detalle.append("\nauto.tipo        = ").append(this.getTipo().getNombre());
         }
-                detalle += "\nauto.color       = " + this.color    +
-                "\nauto.colorPatente = " + colorPatente;
+                detalle.append("\nauto.color       = ").append(this.color).append("\nauto.colorPatente = ").append(colorPatente);
         if(this.motor != null) {
-            detalle += "\nauto.cilindrada  = " + this.motor.getCilindrada();
+            detalle.append("\nauto.cilindrada  = ").append(this.motor.getCilindrada());
         }
         if(conductor !=null) {
-            detalle += "\nConductor subaru " + this.getConductor();
+            detalle.append("\nConductor subaru ").append(this.getConductor());
         }
         if(getRuedas() != null) {
-            detalle += "Ruedas del automovil: ";
+            detalle.append("Ruedas del automovil: ");
             for (Rueda r : this.getRuedas()) {
-                detalle += "\n" + r.getFabricante() + ", " +
-                        r.getAro() + ", " + r.getAncho();
+                detalle.append("\n").append(r.getFabricante()).append(", ").append(r.getAro()).append(", ").append(r.getAncho());
             }
         }
-        return detalle;
+        return detalle.toString();
     }
     public String acelerar(int rpm){
         return "El auto " + this.fabricante + " acelerando a " + rpm + " rpm.";
@@ -205,13 +203,11 @@ public class Automovil {
     }
     @Override
     public String toString() {
-        return "Automovil{" +
-                "id= " + id + '\''+
-                "fabricante='" + fabricante + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", color='" + color + '\'' +
-                ", cilindrada=" + this.motor.getCilindrada() +
-                ", capacidadEsTanque=" + this.estanque.getCapacidad() +
-                '}';
+        return this.id + " : " + this.fabricante + " " + this.modelo;
+    }
+
+    @Override
+    public int compareTo(Automovil a) {
+        return this.fabricante.compareTo(a.fabricante);
     }
 }
